@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Ticket Booking System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+header{
+background:#d81b60;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+padding:20px;
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+.movie-card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+.movie-card img{
+width:100%;
+height:450px;
+object-fit:cover;
+}
+
+.movie-details{
+padding:15px;
+}
+
+.movie-details h2{
+margin-bottom:10px;
+}
+
+.movie-details p{
+margin:5px 0;
+}
+
+.book-btn{
+width:100%;
+padding:12px;
+margin-top:10px;
+background:#f84464;
+color:white;
+border:none;
+cursor:pointer;
+border-radius:8px;
+font-size:18px;
+}
+
+.booking-section{
+max-width:900px;
+margin:30px auto;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.booking-section input,
+.booking-section select{
+width:100%;
+padding:10px;
+margin-top:10px;
+}
+
+.booking-section button{
+width:100%;
+padding:12px;
+margin-top:15px;
+background:green;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+.footer{
+background:#222;
+color:white;
+padding:20px;
+text-align:center;
+margin-top:20px;
+}
+
+@media(max-width:768px)
+{
+.container{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🎬 Movie Ticket Booking System</h1>
+
+<p>Book Your Favourite Movies Online</p>
+
+</header>
+
+<div class="container">
+
+<div class="movie-card">
+
+<img src="https://wallpaperaccess.com/full/9557487.jpg">
+
+<div class="movie-details">
+
+<h2>Pushpa 2</h2>
+
+<p>⭐ 9.1/10</p>
+
+<p>🎭 Action, Drama</p>
+
+<p>🕒 3h 20m</p>
+
+<p>📍 PVR Vijayawada</p>
+
+<p>🎟 ₹250</p>
+
+<button class="book-btn"
+onclick="selectMovie('Pushpa 2',250)">
+Book Ticket
+</button>
+
+</div>
+</div>
+
+<div class="movie-card">
+
+<img src="https://wallpaperaccess.com/full/14310465.jpg">
+
+<div class="movie-details">
+
+<h2>Devara</h2>
+
+<p>⭐ 8.9/10</p>
+
+<p>🎭 Action, Adventure</p>
+
+<p>🕒 3h 05m</p>
+
+<p>📍 INOX Hyderabad</p>
+
+<p>🎟 ₹300</p>
+
+<button class="book-btn"
+onclick="selectMovie('Devara',300)">
+Book Ticket
+</button>
+
+</div>
+</div>
+
+<div class="movie-card">
+
+<img src="https://m.media-amazon.com/images/M/MV5BMGRjZTQ0YzUtYWJjMS00OGY1LTkwNjMtYjYwZmFmNTY3MGZkXkEyXkFqcGc@._V1_.jpg">
+<div class="movie-details">
+
+<h2>Kalki 2898 AD</h2>
+
+<p>⭐ 9.2/10</p>
+
+<p>🎭 Sci-Fi, Action</p>
+
+<p>🕒 3h 10m</p>
+
+<p>📍 PVR Guntur</p>
+
+<p>🎟 ₹350</p>
+
+<button class="book-btn"
+onclick="selectMovie('Kalki',350)">
+Book Ticket
+</button>
+
+</div>
+</div>
+
+<div class="movie-card">
+
+<img src="https://m.media-amazon.com/images/M/MV5BZTliOWFlZWUtZDZkOC00NzQ2LTgyNmMtOWJmNmNmMTI3YzgzXkEyXkFqcGc@._V1_QL75_UX585_.jpg">
+<div class="movie-details">
+
+<h2>Salaar</h2>
+
+<p>⭐ 8.8/10</p>
+
+<p>🎭 Action, Thriller</p>
+
+<p>🕒 2h 55m</p>
+
+<p>📍 Cinepolis Vizag</p>
+
+<p>🎟 ₹280</p>
+
+<button class="book-btn"
+onclick="selectMovie('Salaar',280)">
+Book Ticket
+</button>
+
+</div>
+</div>
+
+<div class="movie-card">
+
+<img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/c7d5e4140074961.623b147c53ca8.jpg">
+
+<div class="movie-details">
+
+<h2>RRR</h2>
+
+<p>⭐ 9.0/10</p>
+
+<p>🎭 Historical, Action</p>
+
+<p>🕒 3h 05m</p>
+
+<p>📍 AMB Cinemas</p>
+
+<p>🎟 ₹320</p>
+
+<button class="book-btn"
+onclick="selectMovie('RRR',320)">
+Book Ticket
+</button>
+
+</div>
+</div>
+
+<div class="movie-card">
+<img src="https://i.pinimg.com/736x/d6/f7/34/d6f734f806f42d2e5e0f88ff2898087b.jpg">
+
+
+<div class="movie-details">
+
+<h2>Game Changer</h2>
+
+<p>⭐ 8.7/10</p>
+
+<p>🎭 Political, Action</p>
+
+<p>🕒 2h 50m</p>
+
+<p>📍 PVR Eluru</p>
+
+<p>🎟 ₹270</p>
+
+<button class="book-btn"
+onclick="selectMovie('Game Changer',270)">
+Book Ticket
+</button>
+
+</div>
+</div>
+
+</div>
+
+<div class="booking-section">
+
+<h2>Booking Form</h2>
+
+<input type="text"
+id="name"
+placeholder="Enter Name">
+
+<input type="email"
+id="email"
+placeholder="Enter Email">
+
+<input type="tel"
+id="phone"
+placeholder="Enter Mobile Number">
+
+<select id="tickets">
+
+<option value="1">1 Ticket</option>
+<option value="2">2 Tickets</option>
+<option value="3">3 Tickets</option>
+<option value="4">4 Tickets</option>
+
+</select>
+
+<h3 id="movie">
+Selected Movie : None
+</h3>
+
+<h3 id="amount">
+Total Amount : ₹0
+</h3>
+
+<button onclick="confirmBooking()">
+Confirm Booking
+</button>
+
+</div>
+
+<div class="footer">
+
+<p>📞 +91 7670922952</p>
+
+<p>✉ support@moviebooking.com</p>
+
+<p>📍 Vijayawada, Andhra Pradesh</p>
+
+</div>
+
+<script>
+
+let movieName="";
+let ticketPrice=0;
+
+function selectMovie(name,price)
+{
+movieName=name;
+ticketPrice=price;
+
+document.getElementById("movie")
+.innerHTML=
+"Selected Movie : "+name;
+
+updateAmount();
+}
+
+document.getElementById("tickets")
+.addEventListener("change",
+updateAmount);
+
+function updateAmount()
+{
+let qty=
+document.getElementById("tickets").value;
+
+let total=
+qty*ticketPrice;
+
+document.getElementById("amount")
+.innerHTML=
+"Total Amount : ₹"+total;
+}
+
+function confirmBooking()
+{
+let name=
+document.getElementById("name").value;
+
+if(movieName==="")
+{
+alert("Select Movie First");
+return;
+}
+
+alert(
+"Booking Successful!\n\n"+
+"Movie : "+movieName+
+"\nCustomer : "+name
+);
+}
+
+</script>
+
+</body>
+</html>
